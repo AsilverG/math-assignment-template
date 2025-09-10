@@ -1,0 +1,316 @@
+% mypreamble.sty
+\ProvidesPackage{mypreamble}
+
+\documentclass[10pt]{article}
+ \usepackage{amsmath,amsfonts,amsthm,amssymb,amscd,enumerate, url, anysize, hyperref, accents}
+% \usepackage[utopia]{mathdesign}
+ \usepackage[pdftex]{graphicx,color} 
+\usepackage{tikz}
+\marginsize{0.8in}{0.8in}{1in}{0.8in}
+
+\newcounter{commentCounter}
+\setcounter{commentCounter}{1}
+\newcommand{\note}[1]
+{%
+ \par\noindent{\sffamily\textbf{\textcolor{orange}{NOTE TO AUTHOR: \arabic{commentCounter}: #1}}}
+ \par
+ \stepcounter{commentCounter}
+}%
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{quest}[thm]{Question}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vb}{\vec{b}}
+\newcommand{\vc}{\vec{c}}
+\newcommand{\vd}{\vec{d}}
+\newcommand{\ve}{\vec{e}}
+\newcommand{\vf}{\vec{f}}
+\newcommand{\vg}{\vec{g}}
+\newcommand{\vh}{\vec{h}}
+\newcommand{\vi}{\vec{i}}
+\newcommand{\vj}{\vec{j}}
+\newcommand{\vk}{\vec{k}}
+\newcommand{\vl}{\vec{l}}
+\newcommand{\vm}{\vec{m}}
+\newcommand{\vn}{\vec{n}}
+\newcommand{\vo}{\vec{o}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\vq}{\vec{q}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\vs}{\vec{s}}
+\newcommand{\vt}{\vec{t}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vz}{\vec{z}}
+
+\newcommand{\dt}{\mathbin{\boldsymbol{\cdot}}}
+\newcommand{\odt}{\mathbin{\boldsymbol{\odot}}}
+\newcommand{\bplus}{\mathbin{\boldsymbol{+}}}
+
+\newcommand{\cross}{\mathbin{\times}}
+\newcommand{\Dirac}[1]{\slashed{D}_{#1}}
+
+\newcommand{\dd}{\mathrm{d}}
+\DeclareMathOperator\grad{grad}
+\DeclareMathOperator\dive{div}
+\DeclareMathOperator\Div{Div}
+\DeclareMathOperator\curl{curl}
+\DeclareMathOperator\vol{vol}
+\DeclareMathOperator\Hol{Hol}
+\DeclareMathOperator\adj{adj}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\inj{inj}
+\DeclareMathOperator\pf{Pf}
+\newcommand\tRc{\mathrm{Ric}}
+\newcommand\tR{\mathrm{R}}
+\newcommand{\tRm}{\mathrm{Rm}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hess}{Hess}
+
+\newcommand{\sA}{\mathsf{A}}
+\newcommand{\sB}{\mathsf{B}}
+\newcommand{\sC}{\mathsf{C}}
+\newcommand{\sD}{\mathsf{D}}
+\newcommand{\sE}{\mathsf{E}}
+\newcommand{\sF}{\mathsf{F}}
+\newcommand{\sG}{\mathsf{G}}
+\newcommand{\sH}{\mathsf{H}}
+\newcommand{\sI}{\mathsf{I}}
+\newcommand{\sJ}{\mathsf{J}}
+\newcommand{\sK}{\mathsf{K}}
+\newcommand{\sL}{\mathsf{L}}
+\newcommand{\sM}{\mathsf{M}}
+\newcommand{\sN}{\mathsf{N}}
+\newcommand{\sO}{\mathsf{O}}
+\newcommand{\sP}{\mathsf{P}}
+\newcommand{\sQ}{\mathsf{Q}}
+\newcommand{\sR}{\mathsf{R}}
+\newcommand{\sS}{\mathsf{S}}
+\newcommand{\sT}{\mathsf{T}}
+\newcommand{\sU}{\mathsf{U}}
+\newcommand{\sV}{\mathsf{V}}
+\newcommand{\sW}{\mathsf{W}}
+\newcommand{\sX}{\mathsf{X}}
+\newcommand{\sY}{\mathsf{Y}}
+\newcommand{\sZ}{\mathsf{Z}}
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\real}{\mathrm{Re}}
+\newcommand{\imag}{\mathrm{Im}}
+\newcommand{\G}{\mathrm{G}_2}
+\newcommand{\g}{\mathfrak{g}_2}
+\newcommand{\Spin}[1]{\mathrm{Spin}(#1)}
+\newcommand{\GL}[1]{\mathrm{GL}(#1)}
+\newcommand{\SL}[1]{\mathrm{SL}(#1)}
+\newcommand{\U}[1]{\mathrm{U}(#1)}
+\newcommand{\SU}[1]{\mathrm{SU}(#1)}
+\newcommand{\SO}[1]{\mathrm{SO}(#1)}
+\newcommand{\detr}{\det\ \!\!\!_{\mathbb R}}
+\newcommand{\detc}{\det\ \!\!\!_{\mathbb C}}
+\newcommand{\isom}{\overset{\cong}{\to}}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\K}{\mathbb K}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Qu}{\mathbb H}
+\newcommand{\Oc}{\mathbb O}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\PR}{\mathbb P}
+
+\newcommand{\Lam}{\Lambda}
+\newcommand{\bu}{\bullet}
+\newcommand{\w}{\wedge}
+
+\newcommand{\ph}{\varphi}
+\newcommand{\ps}{\psi}
+\newcommand{\st}{\star}
+\newcommand{\hk}{\mathbin{\hbox{\vrule height0.3pt width5pt depth 0.2pt \vrule height5pt width0.4pt depth 0.2pt}}}
+\newcommand{\smallhk}{\mathbin{\hbox{\vrule height0.15pt width2.5pt depth 0.1pt \vrule height2.5pt width0.2pt depth 0.1pt}}}
+\newcommand{\lieg}{\mathfrak {g}_2}
+
+\newcommand{\del}{\partial}
+\newcommand{\delbar}{\overline{\partial}}
+\newcommand{\ddt}{\frac{d}{d t}}
+\newcommand{\dl}{\delta}
+\newcommand{\z}{\mathbf 0}
+\newcommand{\sta}{\star}
+
+\newcommand{\ddr}{\frac{\del}{\del r}}
+\newcommand{\ddth}{\frac{\del}{\del \theta}}
+\newcommand{\ddph}{\frac{\del}{\del \ph}}
+\newcommand{\ddx}[1]{\frac{\del}{\del x^{#1}}}
+\newcommand{\dx}[1]{\dd x^{#1}}
+\newcommand{\ddy}[1]{\frac{\del}{\del y^{#1}}}
+\newcommand{\dy}[1]{\dd y^{#1}}
+\newcommand{\ddtx}[1]{\frac{\del}{\del \tilde x^{#1}}}
+\newcommand{\dtx}[1]{\dd \tilde x^{#1}}
+\newcommand{\ddty}[1]{\frac{\del}{\del \tilde y^{#1}}}
+\newcommand{\dty}[1]{\dd \tilde y^{#1}}
+\newcommand{\nab}[1]{\nabla_{#1}}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\Map}{\operatorname{Map}}
+\newcommand{\spi}{\slashed S}
+
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\rest}[2]{ \left. {#1} \right|_{#2} }
+\newcommand{\bigrest}[2]{ {#1} \Big|_{#2} }
+
+\newcommand{\sym}{\mathrm{S}^2 (T^* M)}
+\newcommand{\symo}{\mathrm{S}^2_0 (T^* M)}
+\newcommand{\Sym}{\mathcal{S}^2}
+\newcommand{\Symo}{\mathcal{S}^2_0}
+\newcommand{\tens}{\mathcal T^2}
+\newcommand{\ten}{\mathcal T}
+\newcommand{\oct}{\circledcirc}
+\newcommand{\Pop}{\mathcal P}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\cyc}{\sum_{\circlearrowleft}}
+
+\newcommand{\ch}{\boldsymbol{c}}
+\newcommand{\chc}{\boldsymbol{ch}}
+\newcommand{\td}{\boldsymbol{td}}
+\newcommand{\po}{\boldsymbol{p}}
+
+\newcommand{\rA}{\mathrm{A}}
+\newcommand{\rB}{\mathrm{B}}
+\newcommand{\rP}{\mathrm{P}}
+\newcommand{\rQ}{\mathrm{Q}}
+
+\newcommand{\llangle}{\langle \! \langle}
+\newcommand{\rrangle}{\rangle \! \rangle}
+\renewcommand{\th}{\text{th}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\inte}{\operatorname{int}}
+\newcommand{\ext}{\operatorname{ext}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand{\cl}{\operatorname{cl}}
+
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+\newcommand{\magenta}[1]{\textcolor{magenta}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\olive}[1]{\textcolor{olive}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+\newcommand{\violet}[1]{\textcolor{violet}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+
+\newcommand{\blueline}{\blue{\hrule}}
+
+
+\newenvironment{proofb}{\begin{proof}\mbox{}\\}{\end{proof}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\begin{document}
+
+% Title information
+\begin{center}
+    \textbf{Hyunseo Park} \\
+    Math 146 \\
+    January 13, 2025 \\
+    Assignment 1
+\end{center}
+
+\section*{\centering Question 1}
+
+\blueline
+
+\begin{enumerate}[{$[$}1{$]$}]
+    \item Write Questions
+    \begin{enumerate}[{$[$}a{$]$}]
+        \item part a)
+    \end{enumerate}
+\end{enumerate}
+
+
+\blueline
+
+\vspace{0.5cm}
+
+\vspace{0.5cm}
+\begin{center}
+    \textbf{Theorem: }
+    
+
+\end{center}
+
+\begin{proofb}
+
+
+
+\end{proofb}
+\vspace{0.5cm}
+
+\begin{center}
+    Q.E.D.
+\end{center}
+
+\end{document}
+
+
+
