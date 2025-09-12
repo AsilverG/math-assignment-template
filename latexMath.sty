@@ -20,6 +20,17 @@
  \par
  \stepcounter{commentCounter}
 }%
+\newcounter{step}
+\newenvironment{steps}
+  {\begin{list}{\textbf{Step \thestep.}}{%
+     \usecounter{step}%
+     \setlength{\leftmargin}{0pt}% no global left margin
+     \setlength{\labelwidth}{3em}% reserve enough space for "Step N."
+     \setlength{\labelsep}{0.5em}% space between label and text
+     \setlength{\itemindent}{0pt}%
+     \setlength{\listparindent}{0pt}%
+     \setlength{\parsep}{\baselineskip}}}
+  {\end{list}}
 
 
 \newtheorem{theorem}{Theorem}[section]
